@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- main style css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./css/all.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <!--i cone and text nav-->
+            <div class="menu-nav">
+                <h1>just another intelligent system </h1>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-- button discovery more -->
+            <div class="discovery">
+                <button class="discovery-btn">Discovery More <span><i
+                            class="fa-solid fa-arrow-right"></i></span></button>
+            </div>
+
+        </div>
+    </header>
+    <section class="my-profile">
+        <div class="container">
+            <div class="text">
+                <h1>
+                    Hello,<br>i'm <span>Mohamed</span>
+                </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci non laboriosam incidunt
+                    libero saepe et labore, atque quibusdam unde illum temporibus excepturi suscipit recusandae vitae
+                    tenetur at reiciendis deserunt.</p>
+                <button class="belongMe">Belong Me</button>
+            </div>
+            <div class="image">
+                <img src="./images/2.jpg" alt="">
+
+            </div>
+        </div>
+
+    </section>
+    <section class="info">
+        <div class="custom">
+            <div class="links">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">routines</a></li>
+                    <li><a href="#">contact</a></li>
+                    <li><a href="#">management</a></li>
+                </ul>
+            </div>
+            <div class="name-info">
+                <h1>Mohamed</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe aut est id voluptates eligendi
+                    voluptatem
+                    molestiae, doloribus ullam? Tempora ullam, tenetur at ut inventore veniam adipisci cumque
+                    consequatur
+                    magnam porro nihil fugiat accusantium rem eveniet est autem temporibus assumenda aliquid natus dicta
+                    sunt totam, nam voluptatem quibusdam? Excepturi, sed tempora.</p>
+                <button>learn more <span><i class="fa-solid fa-arrow-right"></i></span> </button>
+            </div>
+            <div class="feature">
+
+                <h1>features</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe aut est id voluptates eligendi
+                    voluptatem
+                    molestiae, doloribus ullam? Tempora ullam, tenetur at ut inventore veniam adipisci cumque
+                    consequatur
+                    magnam porro nihil fugiat accusantium rem eveniet est autem temporibus assumenda aliquid natus dicta
+                    sunt totam, nam voluptatem quibusdam? Excepturi, sed tempora.</p>
+                <button>learn more <span><i class="fa-solid fa-arrow-right"></i></span> </button>
+
+            </div>
+            <div class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+        </div>
+    </section>
+    <section class="waiting">
+        <div class="first">
+        </div>
+        <div class="second"></div>
+        <div class="third"></div>
+        <div class="text">
+            <h1>Welcome</h1>
+            <p>please wait while we get things ready</p>
+            <span class="loader"></span>
+            <div class="close-btn-waiting">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ------------------------------------- -->
+
+    <script>
+        const menuBtn = document.querySelector("header .container .menu-nav i")
+        const closeBtn = document.querySelector(".info .close-btn i")
+        const btnDiscovery = document.querySelector("header .container .discovery button.discovery-btn")
+        const btnBelongMe = document.querySelector(".belongMe")
+        const btncloseWainting = document.querySelector(".close-btn-waiting i")
+        menuBtn.addEventListener("click", e => {
+            document.querySelector(".info").style.height = "100vh"
+            document.querySelector(".info .feature").style.right = "0%"
+            document.querySelector(".info .name-info").style.bottom = "0%"
+            closeBtn.style.opacity=1;
+
+
+        })
+        closeBtn.addEventListener("click", e => {
+            document.querySelector(".info").style.height = "0vh"
+            document.querySelector(".info .feature").style.right = "-100%"
+            closeBtn.style.opacity=0;
+            document.querySelector(".info .name-info").style.bottom = "-100%"
+        })
+
+        function addPropertyFromWaiting() {
+            document.querySelector(".waiting .third").style.height = "100%"
+            document.querySelector(".waiting .second").style.height = "100%"
+            document.querySelector(".waiting .first").style.height = "100%"
+            document.querySelector(".waiting .text").style.opacity = "1"
+            document.querySelector(".waiting ").style = "z-index:1;opacity:1"
+        }
+
+        function removePropertyFromWaiting() {
+            document.querySelector(".waiting .third").style.height = "0%"
+            document.querySelector(".waiting .second").style.height = "0%"
+            document.querySelector(".waiting .first").style.height = "0%"
+            document.querySelector(".waiting .text").style.opacity = "0"
+            document.querySelector(".waiting ").style = "z-index:-1;opacity:0"
+        }
+        btnBelongMe.addEventListener("click", addPropertyFromWaiting)
+        btnDiscovery.addEventListener("click", addPropertyFromWaiting)
+        btncloseWainting.addEventListener("click", removePropertyFromWaiting)
+
+
+    </script>
+
+</body>
+
+</html>
